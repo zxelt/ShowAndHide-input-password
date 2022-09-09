@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custum Input</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+    <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+    <i class="far fa-eye togglepsw" id="togglePassword"></i>
+    <style>
+        .togglepsw{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Js Script
+        const togglePassword = document.querySelector('#togglePassword');
+     const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+    </script>
+</body>
+</html>
